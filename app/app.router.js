@@ -27,35 +27,27 @@ function MainRoutingConfiguration($stateProvider, $urlRouterProvider) {
                 }
             }
         }
-    ).state('home.resources',
-        {
-            url: '^/resources/:id',
-            templateUrl: 'view1/Params/Resources.Input.html',
-            controller: 'InputController',
-            controllerAs: 'inputController'
-        }
-    ).state(
-        'home.resources.Address',
-        {
-            url: '/Address',
-            templateUrl: 'view1/Params/Results/Address/Address.resource.html',
-            controller: 'AddressResourceController',
-            controllerAs: 'addressResource'
-        }).state('home.resources.Buyer',
-        {
-            url: '/Buyer',
-            templateUrl: 'view1/Params/Results/Buyer/Buyer.resource.html',
-            controller: 'BuyerResourceController',
-            controllerAs: 'buyerResource'
-        }).state('logout', {
+    ).state('logout', {
             url: '/logout',
             controller: function(Auth, appname, $state, $scope) {
                 Auth.removeToken(appname);
                 $scope.isAuthenticated = Auth.isAuthenticated();
                 $state.go('login');
             }
+        }).state(
+        'home.Address',
+        {
+            url: '/Address',
+            templateUrl: 'view1/Address/Address.resource.html',
+            controller: 'AddressResourceController',
+            controllerAs: 'addressResource'
+        }).state('home.Buyer',
+        {
+            url: '/Buyer',
+            templateUrl: 'view1/Buyer/Buyer.resource.html',
+            controller: 'BuyerResourceController',
+            controllerAs: 'buyerResource'
         });
 
     $urlRouterProvider.otherwise('/login');
 }
-
