@@ -1,15 +1,41 @@
-<section class="row">
+<form novalidate>
+<section>
     <section class="row">
-        <section class="col-xs-1">
-            <button class="btn btn-default"
-                    type="button"
-                    ng-click="buyerResource.query()">Query</button>
+        <h3>/List</h3>
+        <section class="row">
+            <section class="col-xs-1">
+                <button class="btn btn-default"
+                        type="button"
+                        ng-click="buyerResource.query()">/Query</button>
+            </section>
+        </section>
+        <br>
+        <section class="row">
+            <section class="col-lg-12">
+                <pre>{{ buyerResource.results | json }}</pre>
+            </section>
         </section>
     </section>
-    <br>
+
     <section class="row">
-        <section class="col-lg-12">
-            <pre>{{ buyerResource.results | json }}</pre>
+        <section class="row">
+            <h4>/Get</h4>
+        </section>
+        <section class="row">
+            <section class="form-group">
+                <label for="buyerId">Buyer Id:</label>
+                <input type="text"
+                       class="form-control"
+                       ng-model="buyerResource.buyerId"
+                       id="buyerId">
+            </section>
+            <button class="btn btn-default"
+                    type="button"
+                    ng-click="buyerResource.getBuyerById()">/Get</button>
+        </section>
+        <section class="row">
+            <pre>{{ buyerResource.getBuyerByIdResults | json}}</pre>
         </section>
     </section>
 </section>
+</form>
