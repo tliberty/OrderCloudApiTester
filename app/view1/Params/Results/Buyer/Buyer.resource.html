@@ -1,0 +1,15 @@
+<section class="row">
+    <section class="row">
+        <section class="col-xs-1">
+            <button class="btn btn-default"
+                    type="button"
+                    ng-click="buyerResource.query()">Query</button>
+        </section>
+    </section>
+    <br>
+    <section class="row">
+        <section class="col-lg-12">
+            <pre>{{ buyerResource.results | json }}</pre>
+        </section>
+    </section>
+</section>

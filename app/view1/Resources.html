@@ -1,0 +1,18 @@
+<section class="row">
+    <section class="col-xs-2">
+        <section class="well-sm">
+            <section ng-repeat="api in apiResource.resources">
+                <h4><a ui-sref="home.resources.{{api}}">{{api}}</a> </h4>
+                <hr/>
+            </section>
+        </section>
+    </section>
+
+    <section class="col-xs-10">
+        <section class="row">
+            <section class="panel">
+                <section class="panel-body" ui-view></section>
+            </section>
+        </section>
+    </section>
+</section>

@@ -1,0 +1,59 @@
+<section class="row">
+    <form novalidate>
+        <section class="row">
+            <section class="panel">
+                <section class="panel-heading">
+                    <h5>Messages SandBox</h5>
+                </section>
+                <section class="panel-body">
+                    <section class="form-group">
+                        <label for="buyerId">Buyer ID:</label>
+                        <input id="buyerId"
+                               type="text"
+                               class="form-control"
+                               placeholder="Enter Buyer Id"
+                               ng-model="addressResource.buyerId" >
+                    </section>
+                </section>
+            </section>
+
+            <hr>
+            <h3><em>/ListAddresses</em></h3>
+            <hr>
+            <section class="form-group">
+                <label for="searchId">Search</label>
+                <input id="searchid"
+                       type="text"
+                       placeholder="Enter Search Field"
+                       ng-model="addressResource.searchId">
+            </section>
+
+            <section class="form-group">
+                <label for="pageId">Page</label>
+                <input id="pageId"
+                       type="number"
+                       placeholder="Enter Page Number"
+                       ng-model="addressResource.pageId">
+            </section>
+
+            <section class="form-group">
+                <label for="pageSizeId">Page Size</label>
+                <input id="pageSizeId"
+                       type="number"
+                       placeholder="Enter Page Size"
+                       ng-model="addressResource.pageSizeId">
+            </section>
+
+            <button class="btn btn-default"
+                    type="button"
+                    ng-click="addressResource.query()">Query</button>
+        </section>
+        <section class="row">
+            <section class="panel">
+                <section class="panel-heading">
+                    <pre>{{ addressResource.results | json }}</pre>
+                </section>
+            </section>
+        </section>
+    </form>
+</section>
